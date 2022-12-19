@@ -26,6 +26,7 @@ jobs:
         uses: actions/setup-node@v3.5.1
         with:
           node-version: "${{ env.NODE_VERSION }}"
+          registry-url: "https://registry.npmjs.org"
           cache: yarn
       - name: Yarn install
         run: |
@@ -37,6 +38,6 @@ jobs:
       - name: Build
         run: yarn build
       - name: Publish
-        run: npm publish
+        run: yarn publish --access public --non-interactive --new-version ${{ steps.version.outputs.value }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
