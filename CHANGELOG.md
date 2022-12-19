@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v1.0.0...v1.0.1) (2022-12-19)
+
+
+### Bug Fixes
+
+* changed to npm publish ([f436dbb](https://github.com/flowcore-io/library-flowcore-microservice-ts/commit/f436dbb0dff2292435873a1e2625425b55e0de96))
+
 ## 1.0.0 (2022-12-19)
 
 
