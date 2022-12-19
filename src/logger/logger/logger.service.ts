@@ -18,7 +18,7 @@ export class LoggerService {
     this.context = context;
   }
 
-  public getContext(): string {
+  public getContext(): string | undefined {
     return this.context;
   }
 
