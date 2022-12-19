@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v1.0.1...v1.0.2) (2022-12-19)
+
+
+### Bug Fixes
+
+* added registry to setup node ([57de47b](https://github.com/flowcore-io/library-flowcore-microservice-ts/commit/57de47bd8144378f89f8251fca63f68b380a8f94))
+
 ## [1.0.1](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v1.0.0...v1.0.1) (2022-12-19)
 
 
