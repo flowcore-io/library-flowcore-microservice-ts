@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+//    "types": []            /* Skip type checking all .d.ts files. */
+    "experimentalDecorators": true,
+    "strict": true,
+  }
+}
