@@ -22,6 +22,15 @@ jobs:
         with:
           token: ${{ secrets.FLOWCORE_MACHINE_GITHUB_TOKEN }}
           submodules: true
+      - name: Extract version from package.json
+        uses: sergeysova/jq-action@v2
+        id: version
+        with:
+          cmd: 'jq .version package.json -r'
+
+      - name: Show my version
+        run: 'echo "version ${{ steps.version.outputs.value }}"'
+
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.5.1
         with:
