@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.0.0](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v1.0.3...v2.0.0) (2022-12-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* switched back to single entry point due to NestJS and Vite/Esbuild incompatibilities.
+
+### Features
+
+* added Health check module ([0015bd6](https://github.com/flowcore-io/library-flowcore-microservice-ts/commit/0015bd6fbc355c7bde6be970a170010a9abf628b))
+* changed from vite and esbuild back to webpack ([aa5fb12](https://github.com/flowcore-io/library-flowcore-microservice-ts/commit/aa5fb129f9674bdbc922952e85697c4a6e1679d9))
+
 ## [1.0.3](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v1.0.2...v1.0.3) (2022-12-19)
 
 
