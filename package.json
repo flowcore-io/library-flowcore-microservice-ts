@@ -2,36 +2,21 @@
   "name": "@flowcore/microservice",
   "license": "MIT",
   "version": "1.0.3",
-  "type": "module",
+  "type": "commonjs",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
-  "exports": {
-    "./config": {
-      "import": "./dist/config.js",
-      "require": "./dist/config.cjs"
-    },
-    "./logger": {
-      "import": "./dist/logger.js",
-      "require": "./dist/logger.cjs"
-    }
-  },
-  "types": "./index.d.ts",
+  "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
-    "dist/*",
-    "index.d.ts",
-    "config.d.ts",
-    "logger.d.ts"
+    "dist"
   ],
   "scripts": {
-    "clean:dist": "rimraf dist/",
-    "build:types": "tsc src/*.ts --declarationDir dist/ --emitDeclarationOnly --declaration --experimentalDecorators --emitDecoratorMetadata",
-    "build:lib": "vite build",
-    "dev": "npm-run-all --parallel \"build:types --watch\" \"build:lib --watch\"",
-    "build": "yarn run clean:dist && yarn run build:lib && yarn run build:types",
-    "prepare": "husky install",
+    "prebuild": "rimraf dist",
+    "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\"",
+    "prepare": "husky install",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -44,14 +29,16 @@
     "@nestjs/core": "9.2.1",
     "@nestjs/microservices": "9.2.1",
     "@nestjs/platform-express": "9.2.1",
+    "@nestjs/terminus": "9.1.4",
     "@nestjs/testing": "9.2.1",
     "@types/jest": "29.2.4",
     "@types/node": "18.11.15",
+    "@types/supertest": "2.0.12",
     "@typescript-eslint/eslint-plugin": "5.46.1",
     "@typescript-eslint/parser": "5.46.1",
     "commitizen": "4.2.6",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "8.29.0",
+    "eslint": "8.30.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.2.1",
     "husky": "8.0.2",
@@ -59,17 +46,14 @@
     "npm-run-all": "4.1.5",
     "prettier": "2.8.1",
     "rimraf": "3.0.2",
+    "supertest": "6.3.3",
     "ts-jest": "29.0.3",
     "typescript": "4.9.4",
-    "vite": "4.0.1",
-    "vite-plugin-dts": "1.7.1",
-    "vite-plugin-externalize-deps": "0.4.0",
     "zod": "3.20.2"
   },
   "jest": {
     "moduleFileExtensions": [
       "js",
-      "json",
       "ts"
     ],
     "rootDir": "src",
@@ -89,6 +73,7 @@
     }
   },
   "dependencies": {
+    "@golevelup/nestjs-discovery": "3.0.0",
     "@jbiskur/nestjs-async-module": "3.11.0",
     "@jbiskur/nestjs-options-module-factory": "3.11.0",
     "@types/dotenv": "8.2.0",
@@ -103,6 +88,7 @@
   "peerDependencies": {
     "@nestjs/common": "^9.2.1",
     "@nestjs/core": "^9.2.1",
+    "@nestjs/terminus": "^9.1.4",
     "zod": "^3.20.2"
   }
 }

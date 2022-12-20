@@ -1,7 +1,0 @@
-{
-  "compilerOptions": {
-    "types": ["jest", "node"],
-    "experimentalDecorators": true,
-    "strict": true
-  }
-}
