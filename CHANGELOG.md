@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v2.0.0...v2.0.1) (2022-12-20)
+
+
+### Bug Fixes
+
+* added missing nestjs cli dev dependency ([84cd538](https://github.com/flowcore-io/library-flowcore-microservice-ts/commit/84cd538df5d5a022db820c2b95944de5315448e4))
+
 ## [2.0.0](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v1.0.3...v2.0.0) (2022-12-20)
 
 
