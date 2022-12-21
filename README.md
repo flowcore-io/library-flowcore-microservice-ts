@@ -306,3 +306,38 @@ the [`@willsoto/nestjs-prometheus`](https://www.npmjs.com/package/@willsoto/nest
 > The `createCounterProvider` and the `Counter` class are exported from the `@flowcore/microservice` package, same goes
 > for `Gauge`,`Histogram` and`Summary`. So you can import them from there instead of the `@willsoto/nestjs-prometheus`
 > and `prom-client` packages.
+
+### Observability
+
+the observability module provides a wrapper around the [`nestjs-ddtrace`](https://www.npmjs.com/package/nestjs-ddtrace)
+package to provide observability.
+
+To use the module, first import the tracer at the top of your main.ts file.
+
+```typescript
+// main.ts
+import "@flowcore/microservice/dist/tracer";
+// ... rest of main file
+```
+
+then import the `ObservabilityModule` into your application module.
+
+```typescript
+// app module
+import {Module} from "@nestjs/common";
+import {ObservabilityModule} from "@flowcore/microservice";
+
+@Module({
+  imports: [
+    // ... other modules
+    ObservabilityModule,
+    // ... other modules
+  ],
+  controllers: [],
+  providers: [],
+})
+export class AppModule {
+}
+```
+
+> `Span` and `TracerService` are exported from the `@flowcore/microservice` package, so you can import them from there
