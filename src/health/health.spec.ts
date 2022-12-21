@@ -1,10 +1,27 @@
 import { NestApplicationBuilder } from "@jbiskur/nestjs-test-utilities";
-import { Injectable, Module } from "@nestjs/common";
+import { Controller, Get, Injectable, Module } from "@nestjs/common";
 import supertest from "supertest";
 import { HealthModule } from "./health.module";
 import { HealthCheckIndicator } from "./decorator/heath-check-indicator.decorator";
 import { CheckHealth } from "./interfaces/check-health.interface";
-import { HealthIndicator, HealthIndicatorResult } from "@nestjs/terminus";
+import {
+  HealthCheck,
+  HealthCheckResult,
+  HealthIndicator,
+  HealthIndicatorResult,
+} from "@nestjs/terminus";
+import { HealthService } from "./health.service";
+
+@Controller("health")
+export class HealthController {
+  constructor(private health: HealthService) {}
+
+  @Get()
+  @HealthCheck()
+  async check(): Promise<HealthCheckResult> {
+    return this.health.check();
+  }
+}
 
 describe("Health Module", () => {
   it("should return status 200", async () => {
@@ -18,6 +35,7 @@ describe("Health Module", () => {
 
     @Module({
       imports: [HealthModule],
+      controllers: [HealthController],
       providers: [HealthyService],
     })
     class HealthyModule {}
@@ -45,6 +63,7 @@ describe("Health Module", () => {
 
     @Module({
       imports: [HealthModule],
+      controllers: [HealthController],
       providers: [UnhealthyService],
     })
     class UnhealthyModule {}
