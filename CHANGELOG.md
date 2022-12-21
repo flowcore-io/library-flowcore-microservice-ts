@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v2.0.2...v2.1.0) (2022-12-21)
+
+
+### Features
+
+* removed health controller added export of HealthService ([bf46df6](https://github.com/flowcore-io/library-flowcore-microservice-ts/commit/bf46df6e36a2f8b70cc666663999450474bcf2d9))
+
 ## [2.0.2](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v2.0.1...v2.0.2) (2022-12-20)
 
 
