@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v2.1.0...v2.2.0) (2022-12-21)
+
+
+### Features
+
+* added metrics module ([386d129](https://github.com/flowcore-io/library-flowcore-microservice-ts/commit/386d129dcf5bbe1428e359df5313bc983ea268a4))
+
 ## [2.1.0](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v2.0.2...v2.1.0) (2022-12-21)
 
 
