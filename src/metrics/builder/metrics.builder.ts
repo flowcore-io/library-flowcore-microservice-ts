@@ -28,7 +28,7 @@ export class MetricsModuleBuilder extends BaseBuilder {
       throw new Error("Controller must be provided");
     }
 
-    return MetricsModule.register({
+    return MetricsModule.forRoot({
       defaultLabels: this.labels,
       defaultMetrics: this.defaultMetrics,
       controller: this.controller,

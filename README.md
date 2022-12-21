@@ -222,15 +222,15 @@ import {Module} from "@nestjs/common";
 import {
   ConfigFactory,
   ConfigModule,
-  HealthModule,
+  HealthModuleBuilder,
 } from "@flowcore/microservice";
 import {HealthController} from "./health.controller";
 
 @Module({
   imports: [
-    HealthModule,
+    new HealthModuleBuilder().usingController(HealthController).build(),
   ],
-  controllers: [HealthController],
+  controllers: [],
   providers: [],
 })
 export class AppModule {

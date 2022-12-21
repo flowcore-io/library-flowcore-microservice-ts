@@ -4,7 +4,7 @@ import { MetricsModuleOptions } from "./interfaces/metrics-module-options.interf
 
 @Module({})
 export class MetricsModule {
-  public static register(options: MetricsModuleOptions) {
+  public static forRoot(options: MetricsModuleOptions) {
     return {
       module: MetricsModule,
       imports: [
