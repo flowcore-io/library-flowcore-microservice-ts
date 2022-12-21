@@ -1,0 +1,13 @@
+#nonk8s
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: flowcore-microservice
+  description: |
+    The flowcore microservice library is designed to provide strong opinions on how to handle configuration, logging, health checks, metrics, and observability.
+  annotations:
+    github.com/project-slug: flowcore-io/library-flowcore-microservice-ts
+spec:
+  type: library
+  owner: backend
+  lifecycle: experimental
