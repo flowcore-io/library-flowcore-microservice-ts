@@ -307,6 +307,11 @@ the [`@willsoto/nestjs-prometheus`](https://www.npmjs.com/package/@willsoto/nest
 > for `Gauge`,`Histogram` and`Summary`. So you can import them from there instead of the `@willsoto/nestjs-prometheus`
 > and `prom-client` packages.
 
+To use default node metrics exported from the `@willsoto/nestjs-prometheus` package, use the `withDefaultMetrics` method
+when building the metrics module.
+
+To add default labels to all metrics, use the `withDefaultLabels` method when building the metrics module.
+
 ### Observability
 
 the observability module provides a wrapper around the [`nestjs-ddtrace`](https://www.npmjs.com/package/nestjs-ddtrace)
