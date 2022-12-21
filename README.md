@@ -267,7 +267,7 @@ To use the module, first create a metrics controller.
 ```typescript
 // metrics controller
 import {Controller, Get, Res} from "@nestjs/common";
-import {PrometheusController, Response} from "@flowcore/microservice";
+import {PrometheusController} from "@flowcore/microservice";
 import {Response} from "express";
 
 @Controller()
