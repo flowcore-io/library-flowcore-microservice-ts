@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.3.0](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v2.2.0...v2.3.0) (2022-12-21)
+
+
+### Features
+
+* added observability module with tracer ([25839ae](https://github.com/flowcore-io/library-flowcore-microservice-ts/commit/25839ae5ce41fcae4a8f35d548bec513784489c4))
+
+
+### Bug Fixes
+
+* added missing observability export ([1f280d4](https://github.com/flowcore-io/library-flowcore-microservice-ts/commit/1f280d48cc2ad47616b3ee53003e7ed50c60af39))
+* fixed missing metrics export ([d71124b](https://github.com/flowcore-io/library-flowcore-microservice-ts/commit/d71124b4f95583669a3790150f89f41175bb385e))
+
 ## [2.2.0](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v2.1.0...v2.2.0) (2022-12-21)
 
 
