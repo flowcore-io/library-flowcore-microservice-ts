@@ -10,11 +10,14 @@
   "main": "dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE.txt"
   ],
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
+    "postbuild": "copyfiles README.md LICENSE.txt dist",
     "format": "prettier --write \"src/**/*.ts\"",
     "prepare": "husky install",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
@@ -38,6 +41,7 @@
     "@typescript-eslint/eslint-plugin": "5.46.1",
     "@typescript-eslint/parser": "5.46.1",
     "commitizen": "4.2.6",
+    "copyfiles": "2.4.1",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.30.0",
     "eslint-config-prettier": "8.5.0",
