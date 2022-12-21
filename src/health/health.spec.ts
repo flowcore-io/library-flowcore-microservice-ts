@@ -50,6 +50,7 @@ describe("Health Module", () => {
 
     expect(result.body.status).toBe("ok");
     expect(result.body.info.healthy.status).toBe("up");
+    await app.close();
   });
 
   it("should return status 503", async () => {
@@ -78,5 +79,6 @@ describe("Health Module", () => {
 
     expect(result.body.status).toBe("ok");
     expect(result.body.info.unhealthy.status).toBe("down");
+    await app.close();
   });
 });

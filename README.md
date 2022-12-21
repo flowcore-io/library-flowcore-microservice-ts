@@ -256,3 +256,53 @@ class HealthyService extends HealthIndicator implements CheckHealth {
 ```
 
 > Remember to add the `HealthModule` to the module imports.
+
+### Metrics
+
+The metrics module is a wrapper around `@willsoto/nestjs-prometheus` to provide metrics for the service. It provides a
+module that can be configured and imported into the application module.
+
+To use the module, first create a metrics controller.
+
+```typescript
+// metrics controller
+import {Controller, Get, Res} from "@nestjs/common";
+import {PrometheusController, Response} from "@flowcore/microservice";
+import {Response} from "express";
+
+@Controller()
+class MetricsController extends PrometheusController {
+  @Get()
+  async index(@Res() response: Response) {
+    return super.index(response);
+  }
+}
+```
+
+Then import it and the `MetricsModule` into your application module using the builder.
+
+```typescript
+// app module
+import {Module} from "@nestjs/common";
+import {MetricsController} from "./metrics.controller";
+import {MetricsModuleBuilder} from "@flowcore/microservice";
+
+@Module({
+  imports: [
+    // ... other modules
+    new MetricsModuleBuilder().usingController(MetricsController).build()
+    // ... other modules
+  ],
+  controllers: [],
+  providers: [],
+})
+export class AppModule {
+}
+```
+
+to use the metrics module, follow the instructions in
+the [`@willsoto/nestjs-prometheus`](https://www.npmjs.com/package/@willsoto/nestjs-prometheus) package.
+
+> The `createCounterProvider` and the `Counter` class are exported from the `@flowcore/microservice` package, same goes
+> for `Gauge`,`Histogram` and`Summary`. So you can import them from there instead of the `@willsoto/nestjs-prometheus`
+> and `prom-client` packages.

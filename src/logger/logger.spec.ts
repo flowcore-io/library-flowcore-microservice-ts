@@ -22,6 +22,7 @@ describe("Logger Module", () => {
     const config = ConfigModule.forRoot(
       new ConfigFactory().withSchema(LoggerModuleConfigurationSchema),
     );
+
     @Module({
       imports: [config, new LoggerModuleBuilder().withConfig(config).build()],
       providers: [TestLogger],
@@ -35,5 +36,6 @@ describe("Logger Module", () => {
     const test = await app.resolve(TestLogger);
 
     expect(() => test.log("hello world")).not.toThrow();
+    await app.close();
   });
 });
