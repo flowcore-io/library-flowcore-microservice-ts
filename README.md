@@ -271,7 +271,7 @@ import {PrometheusController} from "@flowcore/microservice";
 import {Response} from "express";
 
 @Controller()
-class MetricsController extends PrometheusController {
+export class MetricsController extends PrometheusController {
   @Get()
   async index(@Res() response: Response) {
     return super.index(response);
