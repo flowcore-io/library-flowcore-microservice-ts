@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v2.3.0...v3.0.0) (2022-12-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* changed signature of HealthModule to use forRoot, changed MetricsModule to use forRoot to conform to other modules.
+
+### Features
+
+* added health module builder ([2aa1413](https://github.com/flowcore-io/library-flowcore-microservice-ts/commit/2aa141385a8db07fce3cd8a01389bf72b40f3589))
+
 ## [2.3.0](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v2.2.0...v2.3.0) (2022-12-21)
 
 
