@@ -7,6 +7,19 @@
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
+  "repository": {
+    "url": "https://github.com/flowcore-io/library-flowcore-microservice-ts.git",
+    "type": "git"
+  },
+  "keywords": [
+    "flowcore",
+    "microservice",
+    "typescript",
+    "nestjs",
+    "datadog",
+    "winston",
+    "prometheus"
+  ],
   "main": "dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
