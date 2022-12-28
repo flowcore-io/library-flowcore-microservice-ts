@@ -10,4 +10,5 @@ metadata:
 spec:
   type: library
   owner: backend
+  system: system:core-libraries
   lifecycle: experimental
