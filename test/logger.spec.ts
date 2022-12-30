@@ -1,10 +1,13 @@
 import { NestApplicationBuilder } from "@jbiskur/nestjs-test-utilities";
-import { LoggerModuleBuilder } from "./builder/logger-module.builder";
+import {
+  ConfigFactory,
+  ConfigModule,
+  InjectLogger,
+  LoggerModuleBuilder,
+  LoggerModuleConfigurationSchema,
+  LoggerService,
+} from "../src";
 import { Injectable, Module } from "@nestjs/common";
-import { ConfigFactory, ConfigModule } from "../config";
-import { LoggerModuleConfigurationSchema } from "./config/logger.configuration";
-import { LoggerService } from "./logger/logger.service";
-import { InjectLogger } from "./decorator/logger.decorator";
 
 @Injectable()
 export class TestLogger {

@@ -1,16 +1,18 @@
 import { NestApplicationBuilder } from "@jbiskur/nestjs-test-utilities";
 import { Controller, Get, Injectable, Module } from "@nestjs/common";
 import supertest from "supertest";
-import { HealthCheckIndicator } from "./decorator/heath-check-indicator.decorator";
-import { CheckHealth } from "./interfaces/check-health.interface";
+import {
+  CheckHealth,
+  HealthCheckIndicator,
+  HealthModuleBuilder,
+  HealthService,
+} from "../src";
 import {
   HealthCheck,
   HealthCheckResult,
   HealthIndicator,
   HealthIndicatorResult,
 } from "@nestjs/terminus";
-import { HealthService } from "./health.service";
-import { HealthModuleBuilder } from "./builder/health-module.builder";
 
 @Controller("health")
 export class HealthController {

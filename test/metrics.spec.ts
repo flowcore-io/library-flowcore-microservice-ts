@@ -1,7 +1,7 @@
 import { NestApplicationBuilder } from "@jbiskur/nestjs-test-utilities";
 import { Controller, Get, Module, Res } from "@nestjs/common";
 import supertest from "supertest";
-import { MetricsModuleBuilder } from "./builder/metrics.builder";
+import { MetricsModuleBuilder } from "../src";
 import { Response } from "express";
 import { PrometheusController } from "@willsoto/nestjs-prometheus";
 

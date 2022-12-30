@@ -1,18 +1,13 @@
 import { NestApplicationBuilder } from "@jbiskur/nestjs-test-utilities";
-import { ConfigModule } from "./config.module";
-import { ConfigFactory } from "./factory/config.factory";
-import * as dotenv from "dotenv";
-import * as path from "path";
+import {
+  BaseBuilder,
+  ConfigFactory,
+  ConfigModule,
+  ConfigService,
+  ConfigurationSchema,
+} from "../src";
 import { z } from "zod";
-import { ConfigurationSchema } from "./interfaces";
-import { ConfigService } from "./config/config.service";
-import { BaseBuilder } from "./builder/base.builder";
 import { DynamicModule, Module } from "@nestjs/common";
-
-dotenv.config({
-  path: path.join(__dirname, ".env.config"),
-  override: false,
-});
 
 describe("Config Module", () => {
   it("should load", async () => {
@@ -93,6 +88,8 @@ describe("Config Module", () => {
     }
 
     class SomeBuilder extends BaseBuilder {
+      requiredContext: string[] = ["found"];
+
       build(): DynamicModule {
         super.build();
 
@@ -100,8 +97,6 @@ describe("Config Module", () => {
           module: SomeBuilder,
         };
       }
-
-      requiredContext: string[] = ["found"];
     }
 
     const lostConfig = ConfigModule.forRoot(new ConfigFactory());
