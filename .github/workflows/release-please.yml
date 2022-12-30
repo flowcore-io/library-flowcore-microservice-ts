@@ -12,7 +12,7 @@ jobs:
         with:
           token: ${{ secrets.FLOWCORE_MACHINE_GITHUB_TOKEN }}
           submodules: true
-      - name: Extract version from package.json
+      - name: Extract package name from package.json
         uses: sergeysova/jq-action@v2
         id: package
         with:
