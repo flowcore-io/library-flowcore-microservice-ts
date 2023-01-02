@@ -7,6 +7,9 @@ metadata:
     The flowcore microservice library is designed to provide strong opinions on how to handle configuration, logging, health checks, metrics, and observability.
   annotations:
     github.com/project-slug: flowcore-io/library-flowcore-microservice-ts
+  links:
+    - url: https://www.npmjs.com/package/@flowcore/microservice
+      title: Library NPM Link
 spec:
   type: library
   owner: backend
