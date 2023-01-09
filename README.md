@@ -55,13 +55,23 @@ export class SomeConfigurationSchema extends ConfigurationSchema {
   context = "some-context";
   linking = {
     someKey: {
-      env: "SOME_KEY"
+      env: "SOME_KEY",
+      default: "some-default-value", // optional, only if you want to override the default value when loading the schema
     },
   };
   shape = SomeConfigurationShape;
+
+  // this is optinal, but can be used to override the defaults specified in the linking
+  constructor(overrideDefaults?: { [key: string]: any }) {
+    super();
+    ConfigurationSchema.override(this.linking, overrideDefaults);
+  }
 }
 
 ```
+
+> **NB!** If you want to be able to override the default of a configuration value you can use the `ConfigurationSchema`
+> class to set the default, not the `zod` schema and include the constructor specified above.
 
 then create a module builder that uses the configuration schema.
 
@@ -109,7 +119,7 @@ import {
 const config = ConfigModule.forRoot(
   new ConfigFactory()
     // ... other schemas
-    .withSchema(SomeConfigurationSchema),
+    .withSchema(SomeConfigurationSchema, /* optional override defaults { path-to-key: new default value, } */)
   // ... other schemas
 );
 
