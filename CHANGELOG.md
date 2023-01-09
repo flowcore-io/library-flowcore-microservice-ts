@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.0](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v3.0.0...v3.1.0) (2023-01-09)
+
+
+### Features
+
+* added functionality to override default values in a configuration schema ([738741c](https://github.com/flowcore-io/library-flowcore-microservice-ts/commit/738741cc9d7d42798396764b26a848653c97e8ab))
+
 ## [3.0.0](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v2.3.0...v3.0.0) (2022-12-21)
 
 
