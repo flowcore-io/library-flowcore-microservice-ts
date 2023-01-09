@@ -43,6 +43,49 @@ describe("Config Module", () => {
     await app.close();
   });
 
+  it("should load with overridden default value", async () => {
+    const testConfigShape = z.object({
+      hello: z.string(),
+    });
+
+    type TestConfig = z.infer<typeof testConfigShape>;
+
+    const DEFAULT_HELLO = "overridden default message";
+
+    class TestConfigSchema extends ConfigurationSchema {
+      context = "test";
+      linking = {
+        hello: {
+          env: "NO_MESSAGE",
+          default: "some default message",
+        },
+      };
+      shape = testConfigShape;
+
+      constructor(overrideDefaults?: { [key: string]: any }) {
+        super();
+        ConfigurationSchema.override(this.linking, overrideDefaults);
+      }
+    }
+
+    const app = await new NestApplicationBuilder()
+      .withTestModule((testModule) =>
+        testModule.withModule(
+          ConfigModule.forRoot(
+            new ConfigFactory().withSchema(TestConfigSchema, {
+              hello: DEFAULT_HELLO,
+            }),
+          ),
+        ),
+      )
+      .build();
+    expect(app.get(ConfigModule)).toBeDefined();
+    expect(
+      (app.get(ConfigService) as ConfigService<TestConfig>).schema.hello,
+    ).toBe(DEFAULT_HELLO);
+    await app.close();
+  });
+
   it("should fail when missing environment variable", async () => {
     const missingConfigShape = z.object({
       missing: z.string(),

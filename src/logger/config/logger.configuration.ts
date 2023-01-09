@@ -10,7 +10,7 @@ export enum LogLevel {
 
 export const LoggerModuleConfigurationShape = z.object({
   logger: z.object({
-    level: z.nativeEnum(LogLevel).default(LogLevel.INFO),
+    level: z.nativeEnum(LogLevel),
     pretty: safeBoolean(false),
     useLabels: safeBoolean(false),
   }),
@@ -25,6 +25,7 @@ export class LoggerModuleConfigurationSchema extends ConfigurationSchema {
     logger: {
       level: {
         env: "LOG_LEVEL",
+        default: LogLevel.INFO,
       },
       pretty: {
         env: "LOG_PRETTY_PRINT",

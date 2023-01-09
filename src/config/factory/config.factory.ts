@@ -11,8 +11,11 @@ export class ConfigFactory {
     return this;
   }
 
-  withSchema(schema: Type<ConfigurationSchema>) {
-    const schemaInstance = new schema();
+  withSchema(
+    schema: Type<ConfigurationSchema>,
+    overrideDefaults?: { [key: string]: any },
+  ) {
+    const schemaInstance = new schema(overrideDefaults);
     this.schemas.set(schemaInstance.context, schemaInstance);
     return this;
   }

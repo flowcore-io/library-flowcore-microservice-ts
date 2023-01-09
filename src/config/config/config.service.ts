@@ -7,7 +7,7 @@ import * as dotenv from "dotenv";
 export class ConfigService<T> {
   public schema: T;
 
-  private fullConfiguration: Pick<ConfigurationSchema, "linking" | "shape"> = {
+  private fullConfiguration = {
     linking: {},
     shape: z.object({}),
   };
@@ -36,7 +36,9 @@ export class ConfigService<T> {
       if (linkingElement && !linkingElement["env"]) {
         filled[key] = this.fillLinkedValues(linkingElement as EnvLink);
       } else {
-        filled[key] = process.env[linkingElement["env"] as string];
+        filled[key] = process.env[linkingElement["env"] as string]
+          ? process.env[linkingElement["env"] as string]
+          : linkingElement["default"];
       }
     });
 
