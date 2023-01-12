@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.1](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v3.1.0...v3.1.1) (2023-01-12)
+
+
+### Bug Fixes
+
+* added numeric coercion to port env of the default app configuration ([895be3a](https://github.com/flowcore-io/library-flowcore-microservice-ts/commit/895be3a8ee2b191be256c1311e46f05d5c2f03bd))
+
 ## [3.1.0](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v3.0.0...v3.1.0) (2023-01-09)
 
 
