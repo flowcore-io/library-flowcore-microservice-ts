@@ -2,7 +2,7 @@ import { z } from "zod";
 import { ConfigurationSchema } from "../interfaces";
 
 export const DefaultAppConfigurationShape = z.object({
-  port: z.number().min(0),
+  port: z.coerce.number().min(0).max(65535),
 });
 export type DefaultAppConfiguration = z.infer<
   typeof DefaultAppConfigurationShape
