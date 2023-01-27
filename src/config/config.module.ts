@@ -16,6 +16,11 @@ export class ConfigModule {
       );
     }
     factory.getSchemas().forEach((schema) => {
+      if (!schema.context) {
+        throw new Error(
+          "Schema must have a context defined. Use the static context property",
+        );
+      }
       ConfigModule.contexts.push(schema.context);
     });
 

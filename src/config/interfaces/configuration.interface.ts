@@ -8,9 +8,9 @@ export interface EnvLink {
 }
 
 export abstract class ConfigurationSchema {
-  public context: string;
-  public shape: ZodObject<any>;
-  public linking: EnvLink;
+  public context: string | undefined;
+  public shape: ZodObject<any> | undefined;
+  public linking: EnvLink | undefined;
 
   public static override(
     linking: EnvLink,

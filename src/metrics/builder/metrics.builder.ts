@@ -6,7 +6,7 @@ export class MetricsModuleBuilder extends BaseBuilder {
   requiredContext: string[] = [];
   private labels = {};
   private defaultMetrics = false;
-  private controller: Type<unknown> = null;
+  private controller: Type<unknown> | undefined;
 
   withDefaultLabels(labels: Record<string, string>): MetricsModuleBuilder {
     this.labels = labels;
@@ -23,8 +23,8 @@ export class MetricsModuleBuilder extends BaseBuilder {
     return this;
   }
 
-  override build(): DynamicModule | null {
-    if (this.controller === null) {
+  override build(): DynamicModule {
+    if (!this.controller) {
       throw new Error("Controller must be provided");
     }
 

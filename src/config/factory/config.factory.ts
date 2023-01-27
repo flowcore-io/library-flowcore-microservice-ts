@@ -16,6 +16,11 @@ export class ConfigFactory {
     overrideDefaults?: { [key: string]: any },
   ) {
     const schemaInstance = new schema(overrideDefaults);
+    if (!schemaInstance.context) {
+      throw new Error(
+        "Schema must have a context defined. Use the static context property",
+      );
+    }
     this.schemas.set(schemaInstance.context, schemaInstance);
     return this;
   }

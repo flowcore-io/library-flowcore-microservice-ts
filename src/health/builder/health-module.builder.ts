@@ -4,7 +4,7 @@ import { DynamicModule, Type } from "@nestjs/common";
 
 export class HealthModuleBuilder extends BaseBuilder {
   requiredContext: string[] = [];
-  private controller: Type<unknown> = null;
+  private controller: Type<unknown> | undefined;
 
   usingController(controller: Type<unknown>): this {
     this.controller = controller;
@@ -12,7 +12,7 @@ export class HealthModuleBuilder extends BaseBuilder {
   }
 
   override build(): DynamicModule {
-    if (this.controller === null) {
+    if (!this.controller) {
       throw new Error("Controller must be provided");
     }
 

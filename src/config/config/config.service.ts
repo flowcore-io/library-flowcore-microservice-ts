@@ -19,6 +19,9 @@ export class ConfigService<T> {
         ...this.fullConfiguration.linking,
         ...config.linking,
       };
+      if (!config.shape) {
+        throw new Error("No shape defined");
+      }
       this.fullConfiguration.shape = this.fullConfiguration.shape.merge(
         config.shape,
       );
