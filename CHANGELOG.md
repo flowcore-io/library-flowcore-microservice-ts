@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.2.0](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v3.1.1...v3.2.0) (2023-01-27)
+
+
+### Features
+
+* added strict null checks to library, for better Zod support ([b9a9c78](https://github.com/flowcore-io/library-flowcore-microservice-ts/commit/b9a9c787ea62a8414df2c38d5fefd4d6b544e1f8))
+
 ## [3.1.1](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v3.1.0...v3.1.1) (2023-01-12)
 
 
