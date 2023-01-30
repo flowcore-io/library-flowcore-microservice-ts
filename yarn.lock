@@ -530,28 +530,28 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.3.tgz#e45e384e4b8ec16bce2fd903af78450f6bf7ec98"
   integrity sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==
 
-"@jbiskur/nestjs-async-module@3.11.0":
-  version "3.11.0"
-  resolved "https://registry.yarnpkg.com/@jbiskur/nestjs-async-module/-/nestjs-async-module-3.11.0.tgz#7cfe707bad61b6b8e74381cd235a4113a418a8a6"
-  integrity sha512-HL1vyoIrlpP9Z5oO+pdTmdFsU0VCRDLA7JaX2eOxs4ml5nQhoqbl1jQKNFVKkq2zZf1YbzahuJSjAQ/nkfKdnw==
+"@jbiskur/nestjs-async-module@4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@jbiskur/nestjs-async-module/-/nestjs-async-module-4.0.2.tgz#fae57d2ffe342803d357b124c469edd606b80000"
+  integrity sha512-eFWKpebGl31nvCSKwfzggXOmNFNG2kHWOTaljWAXiOpqXXLYN1xy+c8tvvNWFSYT5o98jW28hfYQ760IWYyViQ==
   dependencies:
     "@golevelup/nestjs-discovery" "3.0.0"
     cross-fetch "3.0.6"
     nanoid "3.1.25"
 
-"@jbiskur/nestjs-options-module-factory@3.11.0":
-  version "3.11.0"
-  resolved "https://registry.yarnpkg.com/@jbiskur/nestjs-options-module-factory/-/nestjs-options-module-factory-3.11.0.tgz#c25d47f6f32043e6c0b9aebd447f6e05904fea92"
-  integrity sha512-NHvQpOdKADC4cBockivD+pimISK+TNaVsFD/SKoISE2UiehjxTUYcVk9WJrodqxq6iifeASe0WIqdVx7SIhkrQ==
+"@jbiskur/nestjs-options-module-factory@4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@jbiskur/nestjs-options-module-factory/-/nestjs-options-module-factory-4.0.2.tgz#e0d73a7343ebae54862875efc1d3db33ab45c7ca"
+  integrity sha512-1T9QWIxneTIPjI0461Zo1a/7aZidfZZo85oOa1ZENkesKDisonA8lyV2zCHskvE5ZW5NzKdHTa5WcfRHbcl+uA==
   dependencies:
     "@golevelup/nestjs-discovery" "3.0.0"
     cross-fetch "3.0.6"
     nanoid "3.1.25"
 
-"@jbiskur/nestjs-test-utilities@3.11.0":
-  version "3.11.0"
-  resolved "https://registry.yarnpkg.com/@jbiskur/nestjs-test-utilities/-/nestjs-test-utilities-3.11.0.tgz#6a26a927605947adbf9b3fd903700e26c3a735a1"
-  integrity sha512-2ZK9U/pl1nnt3R3BylKqfpjwnVrkK/fFNUz2bqsSJVMbCmFwm1YHADxJXTNFRwLcExJ1w+geKIA2NU0OU95I6w==
+"@jbiskur/nestjs-test-utilities@4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@jbiskur/nestjs-test-utilities/-/nestjs-test-utilities-4.0.2.tgz#07c6f019674bfe3dce1e02bc98632690828af4ca"
+  integrity sha512-qaaRx07WOrTmUkg4eoAPr4vttsjsbEG8bqlDsTPOEyWNUmAcDAFpGnEttQFhhrQgZxZeJg2LAwzaQ1yMBa7Qow==
   dependencies:
     cross-fetch "3.0.6"
 
