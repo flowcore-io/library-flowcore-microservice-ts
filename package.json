@@ -40,7 +40,7 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand"
   },
   "devDependencies": {
-    "@jbiskur/nestjs-test-utilities": "3.11.0",
+    "@jbiskur/nestjs-test-utilities": "4.0.2",
     "@nestjs/cli": "9.1.9",
     "@nestjs/common": "9.3.1",
     "@nestjs/core": "9.3.1",
@@ -78,8 +78,8 @@
   },
   "dependencies": {
     "@golevelup/nestjs-discovery": "3.0.0",
-    "@jbiskur/nestjs-async-module": "3.11.0",
-    "@jbiskur/nestjs-options-module-factory": "3.11.0",
+    "@jbiskur/nestjs-async-module": "4.0.2",
+    "@jbiskur/nestjs-options-module-factory": "4.0.2",
     "@types/dotenv": "8.2.0",
     "@types/lodash": "4.14.191",
     "@willsoto/nestjs-prometheus": "5.1.0",
