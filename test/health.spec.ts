@@ -9,6 +9,7 @@ import {
 } from "../src";
 import {
   HealthCheck,
+  HealthCheckError,
   HealthCheckResult,
   HealthIndicator,
   HealthIndicatorResult,
@@ -61,8 +62,9 @@ describe("Health Module", () => {
     @Injectable()
     @HealthCheckIndicator()
     class UnhealthyService extends HealthIndicator implements CheckHealth {
-      async isHealthy() {
-        return super.getStatus("unhealthy", false);
+      async isHealthy(): Promise<HealthIndicatorResult> {
+        const result = super.getStatus("unhealthy", false);
+        throw new HealthCheckError("unhealthy", result);
       }
     }
 
@@ -81,10 +83,10 @@ describe("Health Module", () => {
 
     const result = await supertest(app.getHttpServer())
       .get("/health")
-      .expect(200);
+      .expect(503);
 
-    expect(result.body.status).toBe("ok");
-    expect(result.body.info.unhealthy.status).toBe("down");
+    expect(result.body.status).toBe("error");
+    expect(result.body.error.unhealthy.status).toBe("down");
     await app.close();
   });
 });
