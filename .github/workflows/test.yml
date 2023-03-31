@@ -19,7 +19,7 @@ jobs:
         token: ${{ secrets.FLOWCORE_MACHINE_GITHUB_TOKEN }}
         submodules: true
     - name: Setup Node.js environment
-      uses: actions/setup-node@v3.5.1
+      uses: actions/setup-node@v3.6.0
       with:
         node-version: "${{ env.NODE_VERSION }}"
         cache: yarn
