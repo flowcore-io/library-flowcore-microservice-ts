@@ -22,9 +22,9 @@ export class ConfigService<T> {
       if (!config.shape) {
         throw new Error("No shape defined");
       }
-      this.fullConfiguration.shape = this.fullConfiguration.shape.merge(
-        config.shape,
-      );
+
+      const interimShape = this.fullConfiguration.shape.merge(config.shape);
+      this.fullConfiguration.shape = interimShape as any;
     });
 
     const configObject = this.fillLinkedValues(this.fullConfiguration.linking);
