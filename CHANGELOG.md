@@ -1,5 +1,21 @@
 # Changelog
 
+## [4.0.0](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v3.2.0...v4.0.0) (2023-06-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* updated nestjs libs to v10
+
+### Features
+
+* updated nestjs and [@jbiskur](https://github.com/jbiskur) nest libraries to v10 ([3f76910](https://github.com/flowcore-io/library-flowcore-microservice-ts/commit/3f769104c6a2d3d69a4954490936c0c53781117e))
+
+
+### Bug Fixes
+
+* **deps:** update jbiskur packages to v4 ([2c8dafc](https://github.com/flowcore-io/library-flowcore-microservice-ts/commit/2c8dafc8ffc44434ee493c347ae5809dd6b8b5c5))
+
 ## [3.2.0](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v3.1.1...v3.2.0) (2023-01-27)
 
 
