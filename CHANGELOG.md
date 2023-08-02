@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.1](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v4.0.0...v4.0.1) (2023-08-02)
+
+
+### Bug Fixes
+
+* added missing log level configuration to simple logger ([a775a8f](https://github.com/flowcore-io/library-flowcore-microservice-ts/commit/a775a8fb1fab18fde8f315ba54239d2fdb048395))
+
 ## [4.0.0](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v3.2.0...v4.0.0) (2023-06-20)
 
 
