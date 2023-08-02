@@ -2,12 +2,17 @@ import { NestApplicationBuilder } from "@jbiskur/nestjs-test-utilities";
 import {
   ConfigFactory,
   ConfigModule,
+  ConfigService,
+  createSimpleLogger,
+  DefaultAppConfiguration,
   InjectLogger,
   LoggerModuleBuilder,
+  LoggerModuleConfiguration,
   LoggerModuleConfigurationSchema,
   LoggerService,
 } from "../src";
 import { Injectable, Module } from "@nestjs/common";
+import { NestFactory } from "@nestjs/core";
 
 @Injectable()
 export class TestLogger {
@@ -40,5 +45,34 @@ describe("Logger Module", () => {
 
     expect(() => test.log("hello world")).not.toThrow();
     await app.close();
+  });
+
+  it("should work to create simple logger and override the log level", async () => {
+    const cfg = ConfigModule.forRoot(
+      new ConfigFactory().withSchema(LoggerModuleConfigurationSchema),
+    );
+    @Module({
+      imports: [cfg, new LoggerModuleBuilder().withConfig(cfg).build()],
+      providers: [TestLogger],
+    })
+    class TestModule {}
+
+    const app = await NestFactory.create(TestModule, { bufferLogs: true });
+
+    const config = (await app.resolve(ConfigService)) as ConfigService<
+      LoggerModuleConfiguration & DefaultAppConfiguration
+    >;
+
+    const logger = createSimpleLogger({
+      ...config.schema,
+      logger: {
+        ...config.schema.logger,
+        level: "error",
+      },
+    });
+
+    app.useLogger(logger);
+
+    expect(() => logger.error(`hello world`)).not.toThrow();
   });
 });
