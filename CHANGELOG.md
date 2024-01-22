@@ -1,5 +1,26 @@
 # Changelog
 
+## [5.0.0](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v4.0.1...v5.0.0) (2024-01-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* removed unused datadog tracer and updated documentation
+
+### Features
+
+* removed unused datadog tracer, bumped packages ([c5a0860](https://github.com/flowcore-io/library-flowcore-microservice-ts/commit/c5a086078885b762363df0a5e72038849a8a17f3))
+
+
+### Bug Fixes
+
+* updated nestjs peer dependency versions ([93fcc17](https://github.com/flowcore-io/library-flowcore-microservice-ts/commit/93fcc174fe318b81c81a56920024750c9ef31683))
+
+
+### Code Refactoring
+
+* removed unused datadog tracer and updated documentation ([6b8396d](https://github.com/flowcore-io/library-flowcore-microservice-ts/commit/6b8396da73f7586e6bf3fb5e80d4675fbcbf7da1))
+
 ## [4.0.1](https://github.com/flowcore-io/library-flowcore-microservice-ts/compare/v4.0.0...v4.0.1) (2023-08-02)
 
 
