@@ -322,37 +322,6 @@ when building the metrics module.
 
 To add default labels to all metrics, use the `withDefaultLabels` method when building the metrics module.
 
-### Observability
+### Observability (Deprecated)
 
-the observability module provides a wrapper around the [`nestjs-ddtrace`](https://www.npmjs.com/package/nestjs-ddtrace)
-package to provide observability.
-
-To use the module, first import the tracer at the top of your main.ts file.
-
-```typescript
-// main.ts
-import "@flowcore/microservice/dist/tracer";
-// ... rest of main file
-```
-
-then import the `ObservabilityModule` into your application module.
-
-```typescript
-// app module
-import {Module} from "@nestjs/common";
-import {ObservabilityModule} from "@flowcore/microservice";
-
-@Module({
-  imports: [
-    // ... other modules
-    ObservabilityModule,
-    // ... other modules
-  ],
-  controllers: [],
-  providers: [],
-})
-export class AppModule {
-}
-```
-
-> `Span` and `TracerService` are exported from the `@flowcore/microservice` package, so you can import them from there
+the observability module has been marked as deprecated, and will be implemented in a new version using Open Telemetry. For now, traces are implemented using eBPF from Groundcover.
